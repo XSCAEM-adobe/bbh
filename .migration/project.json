@@ -1,0 +1,9 @@
+{
+  "sites": {
+    "bbh": {
+      "previewOrg": "XSCAEM-adobe",
+      "previewSite": "bbh",
+      "contentHostUrl": "https://content.da.live/XSCAEM-adobe/bbh/"
+    }
+  }
+}
