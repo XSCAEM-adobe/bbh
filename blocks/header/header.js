@@ -10,22 +10,29 @@ const isDesktop = window.matchMedia('(min-width: 900px)');
  *  2. /nav.plain.html (DA/EDS production — served at site root)
  */
 async function fetchNav() {
-  let base = '/content/';
-  let resp = await fetch('/content/nav.plain.html');
+  // Local (aem up) serves the fragment under /content/; DA/EDS serves it at the
+  // site root. Track which path actually resolved so image srcs can be resolved
+  // against the fragment's own location.
+  let fragmentPath = '/content/nav.plain.html';
+  let resp = await fetch(fragmentPath);
   if (!resp.ok) {
-    base = '/';
-    resp = await fetch('/nav.plain.html');
+    fragmentPath = '/nav.plain.html';
+    resp = await fetch(fragmentPath);
   }
   if (!resp.ok) return null;
   const html = await resp.text();
   const tmp = document.createElement('div');
   tmp.innerHTML = html;
-  // Relative image paths in the fragment (e.g. "images/logo.svg") must resolve
-  // against the fragment location, not the page URL. Rewrite to root-relative.
+  // Image src values in the fragment are relative to the fragment, not to the
+  // page. On DA the optimizer rewrites them to "./media_<hash>.ext"; resolving
+  // that against the page URL (e.g. /us/en/) 404s. Resolve every relative src
+  // against the fragment location so it points at the right absolute path.
+  const fragmentUrl = new URL(fragmentPath, window.location.origin);
   tmp.querySelectorAll('img[src]').forEach((img) => {
     const src = img.getAttribute('src');
-    if (src && !/^(https?:)?\/\//.test(src) && !src.startsWith('/')) {
-      img.setAttribute('src', base + src);
+    if (src && !/^(https?:)?\/\//.test(src) && !src.startsWith('data:')) {
+      const resolved = new URL(src, fragmentUrl);
+      img.setAttribute('src', resolved.pathname + resolved.search);
     }
   });
   return tmp;
