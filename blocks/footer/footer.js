@@ -8,20 +8,26 @@
  * Rewrites relative image paths to resolve against the fragment location.
  */
 async function fetchFooter() {
-  let base = '/content/';
-  let resp = await fetch('/content/footer.plain.html');
+  // Local (aem up) serves the fragment under /content/; DA/EDS serves it at the
+  // site root. Track which path resolved so image srcs resolve against it.
+  let fragmentPath = '/content/footer.plain.html';
+  let resp = await fetch(fragmentPath);
   if (!resp.ok) {
-    base = '/';
-    resp = await fetch('/footer.plain.html');
+    fragmentPath = '/footer.plain.html';
+    resp = await fetch(fragmentPath);
   }
   if (!resp.ok) return null;
   const html = await resp.text();
   const tmp = document.createElement('div');
   tmp.innerHTML = html;
+  // Resolve relative image srcs (e.g. DA's "./media_<hash>.ext") against the
+  // fragment location, not the page URL, so they point at the right path.
+  const fragmentUrl = new URL(fragmentPath, window.location.origin);
   tmp.querySelectorAll('img[src]').forEach((img) => {
     const src = img.getAttribute('src');
-    if (src && !/^(https?:)?\/\//.test(src) && !src.startsWith('/')) {
-      img.setAttribute('src', base + src);
+    if (src && !/^(https?:)?\/\//.test(src) && !src.startsWith('data:')) {
+      const resolved = new URL(src, fragmentUrl);
+      img.setAttribute('src', resolved.pathname + resolved.search);
     }
   });
   return tmp;
