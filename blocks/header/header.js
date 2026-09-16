@@ -189,6 +189,12 @@ export default async function decorate(block) {
   const darkSrc = whiteSrc && whiteSrc.includes('/content/')
     ? '/content/images/bbh-header-logo-dark.svg'
     : '/media/bbh-header-logo-dark.svg';
+  // DA wraps the logo in a <picture> whose <source> srcsets point at the white
+  // hashed asset and take precedence over <img src> — remove them so the src
+  // swap below actually controls which logo shows.
+  if (brandImg) {
+    brandImg.closest('picture')?.querySelectorAll('source').forEach((s) => s.remove());
+  }
   const setLogo = (dark) => {
     if (!brandImg) return;
     brandImg.setAttribute('src', dark ? darkSrc : whiteSrc);
