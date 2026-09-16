@@ -61,6 +61,19 @@ export default async function decorate(block) {
   nav.setAttribute('aria-label', 'Main navigation');
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  // DA/EDS wraps standalone links in <p> (e.g. "<li><p><a>…</a></p>"). The nav
+  // CSS and dropdown logic expect the link as a direct child (li > a, brand > a),
+  // so unwrap any <p> that only wraps a link/image back into its parent.
+  nav.querySelectorAll('p').forEach((p) => {
+    const meaningful = [...p.childNodes].filter(
+      (n) => n.nodeType !== 3 || n.textContent.trim(),
+    );
+    const onlyLinkish = meaningful.every(
+      (n) => n.nodeType === 1 && (n.tagName === 'A' || n.tagName === 'IMG' || n.tagName === 'PICTURE'),
+    );
+    if (onlyLinkish) p.replaceWith(...p.childNodes);
+  });
+
   // Label the three sections: brand, sections (nav), tools.
   ['brand', 'sections', 'tools'].forEach((c, i) => {
     if (nav.children[i]) nav.children[i].classList.add(`nav-${c}`);

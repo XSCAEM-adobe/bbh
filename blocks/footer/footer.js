@@ -41,6 +41,18 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // DA/EDS wraps standalone links/images in <p>; the footer CSS expects them as
+  // direct children, so unwrap any <p> that only wraps a link/image.
+  footer.querySelectorAll('p').forEach((p) => {
+    const meaningful = [...p.childNodes].filter(
+      (n) => n.nodeType !== 3 || n.textContent.trim(),
+    );
+    const onlyLinkish = meaningful.every(
+      (n) => n.nodeType === 1 && (n.tagName === 'A' || n.tagName === 'IMG' || n.tagName === 'PICTURE'),
+    );
+    if (onlyLinkish) p.replaceWith(...p.childNodes);
+  });
+
   // Label the three top-level sections.
   ['links', 'connect', 'bottom'].forEach((c, i) => {
     if (footer.children[i]) footer.children[i].classList.add(`footer-${c}`);
