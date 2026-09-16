@@ -180,13 +180,18 @@ export default async function decorate(block) {
   // On the light (non-hero) bar the logo is dark-text at rest but must flip to
   // the white logo once the bar turns dark on scroll. The dark-text SVG keeps
   // the red/white flag; the white SVG is the default in nav.plain.html.
+  // The served src can be a hashed "./media_<hash>.svg" (DA) or a /content path
+  // (local aem up), so swap by known source rather than by filename edit: the
+  // white variant is whatever was served; the dark variant lives at a stable
+  // path (/media on DA, /content/images locally).
   const brandImg = nav.querySelector('.nav-brand img');
+  const whiteSrc = brandImg ? brandImg.getAttribute('src') : null;
+  const darkSrc = whiteSrc && whiteSrc.includes('/content/')
+    ? '/content/images/bbh-header-logo-dark.svg'
+    : '/media/bbh-header-logo-dark.svg';
   const setLogo = (dark) => {
     if (!brandImg) return;
-    const src = brandImg.getAttribute('src') || '';
-    brandImg.setAttribute('src', dark
-      ? src.replace(/bbh-header-logo\.svg$/, 'bbh-header-logo-dark.svg')
-      : src.replace(/bbh-header-logo-dark\.svg$/, 'bbh-header-logo.svg'));
+    brandImg.setAttribute('src', dark ? darkSrc : whiteSrc);
   };
 
   const onScroll = () => {
