@@ -1,0 +1,121 @@
+/* Block: columns-business-lines
+ * Two side-by-side promo panels (Investor Services / Capital Partners) that
+ * sit inside the dark hero section. White text on #0d1821.
+ * Values extracted from source computed styles at
+ * https://www.bbh.com/us/en.html (.cmp-teaser--hero-page-v2 .cmp-list__list-container)
+ */
+
+/* Row: stacked on mobile, two columns on desktop */
+.columns-business-lines > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Each promo panel */
+.columns-business-lines .columns-business-lines-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Heading — override the site 50px H2 down to the business-line size */
+.columns-business-lines .columns-business-lines-panel h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 34px;
+  letter-spacing: -0.32px;
+  color: #fff;
+}
+
+/* Description paragraph */
+.columns-business-lines .columns-business-lines-panel p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 25px;
+  color: #fff;
+}
+
+/* CTA "Learn more" link — plain white text link with a red right arrow.
+ * EDS auto-decorated the standalone link into a.button inside p.button-container,
+ * so override the button treatment back to an inline text affordance. */
+.columns-business-lines .columns-business-lines-panel p.button-container {
+  margin: 0;
+}
+
+main .columns-business-lines a.button.columns-business-lines-cta:any-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0.32px;
+  text-decoration: none;
+}
+
+/* Red right-arrow icon after the CTA text (matches source right-arrow-red.svg) */
+.columns-business-lines .columns-business-lines-cta::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23c8102e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13M12 5l7 7-7 7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.2s ease;
+}
+
+main .columns-business-lines a.button.columns-business-lines-cta:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.columns-business-lines .columns-business-lines-cta:hover::after {
+  transform: translateX(3px);
+}
+
+@media (width >= 900px) {
+  /* Lift the columns up onto the bottom of the hero image so the red couch
+     shows behind the text (matches source), instead of sitting on flat navy. */
+  .columns-business-lines-container .columns-business-lines-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-top: -230px;
+  }
+
+  .columns-business-lines > div {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 80px;
+    padding-left: 34%; /* shift both columns toward the right (matches source) */
+  }
+
+  .columns-business-lines .columns-business-lines-panel {
+    flex: 1;
+    max-width: 460px;
+  }
+
+  /* L-shaped white bracket wrapping the right + bottom of each column,
+     joined by a rounded bottom-right corner (matches source). */
+  .columns-business-lines .columns-business-lines-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0 -40px -28px 0;
+    border-right: 1px solid rgb(255 255 255 / 45%);
+    border-bottom: 1px solid rgb(255 255 255 / 45%);
+    border-bottom-right-radius: 22px;
+    pointer-events: none;
+  }
+}

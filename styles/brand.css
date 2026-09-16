@@ -1,0 +1,33 @@
+/*
+ * brand.css — BBH design tokens extracted from https://www.bbh.com/us/en.html
+ * Fonts: Platypi (headings), Inter (body) — Google Fonts
+ */
+
+:root {
+  /* fonts */
+  --heading-font-family: "Platypi", georgia, serif;
+  --body-font-family: "Inter", helvetica, arial, sans-serif;
+
+  /* colors */
+  --background-color: #fff;
+  --text-color: #273846;
+  --link-color: #273846;
+  --link-hover-color: #c8102e;
+
+  /* brand palette */
+  --brand-red: #c8102e;
+  --brand-dark: #0d1821;
+  --brand-grey: #505050;
+
+  /* spacing */
+  --section-padding: 64px;
+  --nav-height: 80px;
+
+  /* heading sizes (desktop) */
+  --heading-size-xxl: 80px;
+  --heading-size-xl: 50px;
+  --heading-size-l: 30px;
+  --heading-size-m: 24px;
+  --heading-size-s: 20px;
+  --heading-size-xs: 18px;
+}

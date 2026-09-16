@@ -1,6 +1,11 @@
-/* hero-banner — full-bleed photographic banner with knockout text + yellow CTA */
+/* hero-banner — full-bleed photographic banner with large knockout heading.
+   Values extracted from source .cmp-teaser--hero-page-v2 (see migration-work/hero-banner-extracted.css). */
+
+/* Full-bleed: break out of the .section > div max-width + padding, and
+   neutralise the .section.dark top padding so the image reaches the top. */
 .hero-banner-container .hero-banner-wrapper {
-  max-width: unset;
+  max-width: none;
+  margin: calc(-1 * var(--section-padding)) 0 0;
   padding: 0;
 }
 
@@ -9,71 +14,83 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 536px;
+  min-height: 560px;
   padding: 48px 24px;
   overflow: hidden;
-  color: var(--background-color);
+  background-color: var(--brand-red); /* rgb(200, 16, 46) base behind image */
 }
 
-/* background photo */
-.hero-banner picture {
+/* Row 1 (image cell) → full-bleed background layer */
+.hero-banner > div:first-child {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
+  margin: 0;
+}
+
+.hero-banner > div:first-child > div,
+.hero-banner > div:first-child p,
+.hero-banner > div:first-child picture {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-banner picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 40%; /* keep the red sofa visible along the bottom */
 }
 
-/* dark scrim so knockout text stays legible */
-.hero-banner::after {
+/* Overlay: subtle left-side darkening for headline legibility.
+   The red in this hero comes from the red sofa in the photo itself —
+   there is no red gradient wash in the source. */
+.hero-banner > div:first-child::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(90deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 35%) 55%, rgb(0 0 0 / 10%) 100%);
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 55%) 0%,
+    rgb(0 0 0 / 30%) 35%,
+    rgb(0 0 0 / 0%) 60%
+  );
 }
 
-.hero-banner > div {
-  max-width: 1200px;
+/* Row 2 (text cell) → overlaid content */
+/* stylelint-disable-next-line no-descending-specificity */
+.hero-banner > div:last-child {
+  position: relative;
+  z-index: 2;
   width: 100%;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
-.hero-banner h1,
-.hero-banner h2 {
-  margin: 0 0 0.25em;
-  max-width: 640px;
-  color: var(--background-color);
+.hero-banner h1 {
+  margin: 0 0 16px;
+  max-width: 620px;
+  color: #fff;
   font-family: var(--heading-font-family);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--heading-font-size-xxl);
-  line-height: 1.1;
-}
-
-.hero-banner p {
-  max-width: 520px;
-  margin: 0 0 1.5em;
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
-
-.hero-banner a.button:any-link,
-.hero-banner p strong {
-  display: inline-block;
-  background-color: var(--brand-yellow);
-  color: var(--text-strong-color);
-  font-weight: var(--font-weight-semibold);
-  padding: 0.625em 1.5em;
-  border-radius: var(--border-radius);
+  font-weight: 300;
+  font-size: 56px;
+  line-height: 0.88;
+  letter-spacing: -0.32px;
 }
 
 @media (width >= 900px) {
   .hero-banner {
-    height: 536px;
-    padding: 64px 32px;
+    min-height: 820px; /* source teaser min-height */
+    padding: 0 130px;  /* source teaser padding */
+  }
+
+  .hero-banner h1 {
+    font-size: 120px;   /* source H1 font-size */
+    line-height: 106px; /* source H1 line-height */
   }
 }

@@ -1,0 +1,145 @@
+/* cards-up-next — single horizontal "Up Next" recirculation card.
+   Values extracted from source .cmp-teaser--smaller-crop-v2 computed styles.
+   Source: borderless / transparent card; image + body side-by-side on desktop,
+   stacked on mobile. */
+
+.cards-up-next ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards-up-next li {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 0;
+  background: none;
+}
+
+/* --- image --- */
+.cards-up-next .cards-up-next-card-image {
+  line-height: 0;
+}
+
+.cards-up-next .cards-up-next-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-up-next .cards-up-next-card-image img {
+  width: 100%;
+  aspect-ratio: 5 / 4;   /* source mobile crop ~342x272 */
+  object-fit: cover;
+}
+
+/* --- body --- */
+.cards-up-next .cards-up-next-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* eyebrow "Up Next" (first paragraph) */
+.cards-up-next .cards-up-next-card-body > p:first-child {
+  margin: 0 0 16px;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand-grey);
+}
+
+.cards-up-next .cards-up-next-card-body > p:first-child em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* heading (linked article title) */
+.cards-up-next .cards-up-next-card-body h3 {
+  margin: 0 0 16px;
+  font-family: var(--heading-font-family);
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: -0.32px;
+  color: var(--text-color);
+}
+
+.cards-up-next .cards-up-next-card-body h3 a:any-link {
+  color: var(--text-color);
+}
+
+/* description (paragraph after the heading) */
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-up-next .cards-up-next-card-body h3 + p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #767676;
+}
+
+/* "Read It" CTA — text link with a 2px red underline (no arrow glyph on source) */
+.cards-up-next .cards-up-next-card-body .button-container {
+  display: block;
+  margin: 24px 0 0;
+}
+
+main .cards-up-next a.button:any-link {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 4px;
+  border: 0;
+  border-bottom: 2px solid var(--brand-red);
+  border-radius: 0;
+  background: none;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+main .cards-up-next a.button:hover {
+  color: var(--brand-red);
+  text-decoration: none;
+}
+
+/* --- desktop: image left, body right --- */
+@media (width >= 900px) {
+  .cards-up-next li {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 60px;
+  }
+
+  .cards-up-next .cards-up-next-card-image {
+    flex: 0 0 32%;
+  }
+
+  .cards-up-next .cards-up-next-card-image img {
+    height: 100%;
+    aspect-ratio: 1 / 1;   /* source desktop crop 380x380 */
+  }
+
+  .cards-up-next .cards-up-next-card-body {
+    flex: 1 1 auto;
+    padding: 0 32px 0 0;
+  }
+
+  .cards-up-next .cards-up-next-card-body > p:first-child {
+    font-size: 20px;
+  }
+
+  .cards-up-next .cards-up-next-card-body h3 {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.bbh.com/us/en/insights/investor-services-insights/destination-distribution-navigating-the-worlds-fund-distribution-markets.html",
+  "path": "us/en/insights/investor-services-insights/destination-distribution-navigating-the-worlds-fund-distribution-markets",
+  "timestamp": "2026-09-16T04:14:46.473Z",
+  "title": "Destination Distribution: Navigating the world's fund distribution markets",
+  "template": "investor-services-insights",
+  "blocks": [
+    "tabs-markets",
+    "hero-article",
+    "sharing-article",
+    "cards-up-next"
+  ]
+}

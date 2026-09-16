@@ -1,0 +1,10 @@
+{
+  "variantName": "tabs-markets",
+  "baseBlock": "tabs",
+  "visualCharacteristics": "Horizontal tab list (e.g. Spain / Singapore / UAE / Germany) above a bordered content panel that switches on tab click.",
+  "contentPattern": "Each row is a tab: cell 1 = tab name, cell 2 = panel content (headings, paragraphs, lists, embedded video, footnotes).",
+  "usage": "Market/region switcher inside insights articles.",
+  "canonicalModel": "container",
+  "options": [],
+  "memberVariantIds": ["tabs-markets"]
+}

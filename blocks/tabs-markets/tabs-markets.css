@@ -1,0 +1,80 @@
+/* tabs-markets — horizontal market tab switcher.
+   Design extracted from source .cmp-tabs--horizontal on bbh.com:
+   grey uppercase tabs, centered, with a red underline on the active tab. */
+
+/* ---- Tab strip (role=tablist) ---- */
+.tabs-markets .tabs-markets-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 0;
+  margin: 16px 0;
+  padding: 0;
+  border-bottom: 3px solid rgb(204 204 204);
+  list-style: none;
+  overflow: visible;
+}
+
+/* ---- Tab buttons (both states); reset the global button (red pill) first ---- */
+.tabs-markets .tabs-markets-list button.tabs-markets-tab {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  margin: 0 12px -1px;
+  border: 0;
+  border-bottom: 6px solid transparent;
+  border-radius: 0;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: rgb(118 118 118);
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 34px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  text-overflow: clip;
+  white-space: normal;
+  overflow: visible;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.tabs-markets .tabs-markets-list button.tabs-markets-tab p {
+  margin: 0;
+}
+
+.tabs-markets .tabs-markets-list button.tabs-markets-tab:hover,
+.tabs-markets .tabs-markets-list button.tabs-markets-tab:focus {
+  background-color: transparent;
+  color: rgb(118 118 118);
+}
+
+/* ---- Active tab: only difference is the red underline ---- */
+.tabs-markets .tabs-markets-list button.tabs-markets-tab[aria-selected='true'] {
+  border-bottom-color: var(--brand-red);
+  color: rgb(118 118 118);
+  cursor: default;
+}
+
+/* ---- Panels ---- */
+.tabs-markets .tabs-markets-panel {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tabs-markets .tabs-markets-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* ---- Desktop: wider tab spacing to match source (margin 0 40px) ---- */
+@media (width >= 900px) {
+  .tabs-markets .tabs-markets-list {
+    flex-wrap: nowrap;
+  }
+
+  .tabs-markets .tabs-markets-list button.tabs-markets-tab {
+    margin: 0 40px -1px;
+  }
+}

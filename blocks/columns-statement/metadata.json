@@ -1,0 +1,13 @@
+{
+  "variantName": "columns-statement",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Two-column text statement on a solid brand-red band. Left column: eyebrow label + large headline. Right column: supporting paragraph. Text-only, no images.",
+  "contentPattern": "Two columns (one row): a lead heading cell and a body paragraph cell.",
+  "options": [],
+  "memberVariantIds": ["columns-statement"],
+  "usage": {
+    "reuseCount": 1,
+    "pages": ["/us/en"]
+  }
+}

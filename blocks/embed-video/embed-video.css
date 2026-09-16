@@ -1,0 +1,82 @@
+/*
+ * embed-video — responsive Brightcove/iframe video embed.
+ *
+ * Source reference (bbh.com insights article): the Brightcove player renders
+ * inside the market tab panel at a 16:9 ratio, ~501px wide, floated beside the
+ * "Killian's Comments" text (float: right; margin: 16px 0 20px 20px in the
+ * ~1003px text column). In EDS the block is standalone in the panel flow, so we
+ * preserve the source video's displayed size (16:9, ~500px) and its vertical
+ * spacing, centering it within the panel.
+ *
+ * decorate() replaces the block's contents with a `<div>` that uses the
+ * padding-bottom 56.25% hack + an absolutely-positioned iframe, so the loaded
+ * ratio wrapper must NOT be turned into a flex/grid container.
+ */
+
+.embed-video {
+  width: 100%;
+  max-width: 500px;
+  margin: 16px auto 20px;
+  text-align: center;
+}
+
+/* Pre-decoration / carrier state: center the placeholder link (before the
+   block's decorate() runs and swaps in the iframe wrapper). Scoped to anchors
+   only so it never affects the loaded 16:9 ratio wrapper. */
+.embed-video > div:has(> a),
+.embed-video > div:has(> div > a) {
+  display: flex;
+  justify-content: center;
+}
+
+.embed-video.embed-video-twitter .twitter-tweet-rendered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Poster / placeholder state (Brightcove poster image with play button). */
+.embed-video .embed-video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.embed-video .embed-video-placeholder > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+}
+
+.embed-video .embed-video-placeholder picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.embed-video .embed-video-placeholder-play button {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(3);
+  width: 22px;
+  height: 22px;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 0;
+}
+
+.embed-video .embed-video-placeholder-play button::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 0;
+  height: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid;
+  top: 4px;
+  left: 7px;
+}

@@ -35,21 +35,34 @@
       "id": "section",
       "components": [
         "accordion",
+        "breadcrumb",
         "cards",
+        "cards-reports",
+        "cards-up-next",
         "carousel",
+        "carousel-insights",
         "columns",
+        "columns-business-lines",
+        "columns-report-download",
+        "columns-statement",
+        "columns-stats",
         "embed",
-        "fragment",
+        "embed-video",
         "form",
+        "fragment",
         "hero",
+        "hero-article",
+        "hero-banner",
         "image",
+        "product-recommendations",
         "quote",
         "search",
-        "tabs",
+        "sharing-article",
         "table",
+        "tabs",
+        "tabs-markets",
         "text",
-        "video",
-        "product-recommendations"
+        "video"
       ]
     }
   ]

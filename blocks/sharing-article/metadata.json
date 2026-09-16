@@ -1,0 +1,16 @@
+{
+  "variantName": "sharing-article",
+  "baseBlock": "sharing",
+  "visualCharacteristics": "Horizontal row of four circular/mono social share icons (email, Facebook, X, LinkedIn) for the current article.",
+  "contentPattern": "No authored content required; an optional leading label. Share targets are generated from the page URL.",
+  "usage": "Article social-share row, typically placed near the top of insights/article pages.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": [
+    "sharing-article"
+  ],
+  "pagesUsing": [
+    "/us/en/insights/investor-services-insights/when-ai-makes-experts-better-clients-win"
+  ],
+  "reuseCount": 1
+}

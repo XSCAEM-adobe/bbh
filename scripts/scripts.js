@@ -61,12 +61,39 @@ function autolinkModals(doc) {
 }
 
 /**
+ * Wrap standalone video-provider links into embed-video blocks so they render
+ * as responsive players. A carrier link is a paragraph whose only content is a
+ * single anchor pointing at a known video host (e.g. Brightcove players). These
+ * appear inside imported content (e.g. market tab panels) as bare links.
+ * @param {Element} main The container element
+ */
+function buildEmbedVideoBlocks(main) {
+  const VIDEO_HOSTS = ['players.brightcove.net', 'youtube.com', 'youtu.be', 'vimeo.com'];
+  main.querySelectorAll('p > a[href]:only-child').forEach((a) => {
+    const p = a.parentElement;
+    // The paragraph must contain nothing but the anchor, and the anchor text
+    // must be the bare URL (a genuine carrier link, not a labelled CTA).
+    if (p.childNodes.length !== 1) return;
+    if (a.textContent.trim() !== a.getAttribute('href').trim()) return;
+    if (!VIDEO_HOSTS.some((host) => a.href.includes(host))) return;
+    const block = buildBlock('embed-video', { elems: [a.cloneNode(true)] });
+    p.replaceWith(block);
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
-    if (!main.querySelector('.hero')) buildHeroBlock(main);
+    // Skip synthetic hero auto-blocking when an explicit hero/hero-banner/
+    // hero-article block is already authored; otherwise buildHeroBlock would
+    // steal its picture + h1.
+    if (!main.querySelector('.hero')
+      && !main.querySelector('.hero-banner')
+      && !main.querySelector('.hero-article')) buildHeroBlock(main);
+    buildEmbedVideoBlocks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -126,10 +153,43 @@ function decorateSections(main) {
 }
 
 /**
+ * Move a set of attributes from a source to a target element.
+ * @param {Element} from The source element
+ * @param {Element} to The target element
+ * @param {string[]} [attributes] The list of attributes to move (defaults to all)
+ */
+function moveAttributes(from, to, attributes) {
+  const attrs = attributes || [...from.attributes].map(({ nodeName }) => nodeName);
+  attrs.forEach((attr) => {
+    const value = from.getAttribute(attr);
+    if (value) {
+      to.setAttribute(attr, value);
+      from.removeAttribute(attr);
+    }
+  });
+}
+
+/**
+ * Move instrumentation attributes from a source to a target element.
+ * Used by blocks that rebuild their DOM (e.g. cards/carousel) so Universal
+ * Editor authoring instrumentation is preserved on the new nodes.
+ * @param {Element} from The source element
+ * @param {Element} to The target element
+ */
+export function moveInstrumentation(from, to) {
+  moveAttributes(
+    from,
+    to,
+    [...from.attributes]
+      .map(({ nodeName }) => nodeName)
+      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
+  );
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
-// eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);

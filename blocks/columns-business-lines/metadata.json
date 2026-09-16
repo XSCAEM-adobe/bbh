@@ -1,0 +1,13 @@
+{
+  "variantName": "columns-business-lines",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Two equal side-by-side promo panels; light-on-dark, text-first, each with a heading, supporting paragraph, and a 'Learn more' CTA link. Sits as an overlay at the base of the hero.",
+  "contentPattern": "Two columns (one row), each cell containing a heading + paragraph + link.",
+  "options": [],
+  "memberVariantIds": ["columns-business-lines"],
+  "usage": {
+    "reuseCount": 1,
+    "pages": ["/us/en"]
+  }
+}

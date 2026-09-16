@@ -1,0 +1,13 @@
+{
+  "variantName": "cards-reports",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "A row of report cards, each a large cover thumbnail image above a red linked title with a trailing arrow. No body copy, no CTA button. Light background.",
+  "contentPattern": "Repeatable card items; each card has a cover image cell and a linked title cell.",
+  "options": [],
+  "memberVariantIds": ["cards-reports"],
+  "usage": {
+    "reuseCount": 1,
+    "pages": ["/us/en"]
+  }
+}

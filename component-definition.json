@@ -95,6 +95,81 @@
           }
         },
         {
+          "title": "Breadcrumb",
+          "id": "breadcrumb",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Breadcrumb",
+                  "model": "breadcrumb"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Reports",
+          "id": "cards-reports",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Reports",
+                  "filter": "cards-reports"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Up Next",
+          "id": "cards-up-next",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Up Next",
+                  "filter": "cards-up-next"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Card",
+          "id": "card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Cards",
           "id": "cards",
           "model": "cards",
@@ -132,6 +207,36 @@
           }
         },
         {
+          "title": "Carousel Insights",
+          "id": "carousel-insights",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Carousel Insights",
+                  "filter": "carousel-insights"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Carousel Insights Slide",
+          "id": "carousel-insights-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Carousel Insights Slide",
+                  "model": "carousel-insights-item"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Carousel",
           "id": "carousel",
           "model": "carousel",
@@ -165,6 +270,66 @@
                   "selector": "div:nth-child(2)"
                 }
               ]
+            }
+          }
+        },
+        {
+          "title": "Columns Business Lines",
+          "id": "columns-business-lines",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns Report Download",
+          "id": "columns-report-download",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns Statement",
+          "id": "columns-statement",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Columns Stats",
+          "id": "columns-stats",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "4",
+                  "rows": "1"
+                }
+              }
             }
           }
         },
@@ -207,6 +372,21 @@
           }
         },
         {
+          "title": "Embed Video",
+          "id": "embed-video",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Embed Video",
+                  "model": "embed-video"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "model": "fragment",
@@ -223,6 +403,36 @@
                   "selector": "div>div>p>a"
                 }
               ]
+            }
+          }
+        },
+        {
+          "title": "Hero Article",
+          "id": "hero-article",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero Article",
+                  "model": "hero-article"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Hero Banner",
+          "id": "hero-banner",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Hero Banner",
+                  "model": "hero-banner"
+                }
+              }
             }
           }
         },
@@ -255,6 +465,15 @@
           "id": "quote",
           "model": "quote",
           "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Quote",
+                  "model": "quote"
+                }
+              }
+            },
             "da": {
               "name": "quote",
               "rows": 1,
@@ -295,6 +514,21 @@
           }
         },
         {
+          "title": "Sharing Article",
+          "id": "sharing-article",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Sharing Article",
+                  "model": "sharing-article"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Table",
           "id": "table",
           "model": "table",
@@ -308,6 +542,39 @@
                 {
                   "name": "table",
                   "selector": "div>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Tabs Markets",
+          "id": "tabs-markets",
+          "model": "tabs-markets",
+          "filter": "tabs-markets",
+          "plugins": {
+            "da": {
+              "columns": 1,
+              "rows": 2
+            }
+          }
+        },
+        {
+          "title": "Tabs Markets Item",
+          "id": "tabs-markets-item",
+          "model": "tabs-markets-item",
+          "plugins": {
+            "da": {
+              "columns": 0,
+              "rows": 2,
+              "fields": [
+                {
+                  "name": "name",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "content",
+                  "selector": "div:nth-child(2)"
                 }
               ]
             }
@@ -341,6 +608,30 @@
                 {
                   "name": "content",
                   "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Target offer",
+          "id": "target-offer",
+          "model": "target-offer",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div class=\"target-offer\"><span class=\"target-offer-export-id\" hidden></span><div class=\"target-offer-config\"><div><p class=\"target-offer-mbox\"></p></div></div><div class=\"target-offer-default\"><div><p>Default content</p></div></div></div>",
+              "fields": [
+                {
+                  "name": "exportId",
+                  "selector": "span.target-offer-export-id"
+                },
+                {
+                  "name": "mboxName",
+                  "selector": "p.target-offer-mbox"
+                },
+                {
+                  "name": "content",
+                  "selector": "div.target-offer-default"
                 }
               ]
             }

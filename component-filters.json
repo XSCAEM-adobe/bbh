@@ -9,21 +9,34 @@
     "id": "section",
     "components": [
       "accordion",
+      "breadcrumb",
       "cards",
+      "cards-reports",
+      "cards-up-next",
       "carousel",
+      "carousel-insights",
       "columns",
+      "columns-business-lines",
+      "columns-report-download",
+      "columns-statement",
+      "columns-stats",
       "embed",
-      "fragment",
+      "embed-video",
       "form",
+      "fragment",
       "hero",
+      "hero-article",
+      "hero-banner",
       "image",
+      "product-recommendations",
       "quote",
       "search",
-      "tabs",
+      "sharing-article",
       "table",
+      "tabs",
+      "tabs-markets",
       "text",
-      "video",
-      "product-recommendations"
+      "video"
     ]
   },
   {
@@ -33,15 +46,66 @@
     ]
   },
   {
+    "id": "cards-reports",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "cards-up-next",
+    "components": [
+      "card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
     ]
   },
   {
+    "id": "carousel-insights",
+    "components": [
+      "carousel-insights-item"
+    ]
+  },
+  {
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "columns-business-lines",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "columns-report-download",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "columns-statement",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "columns-stats",
+    "components": [
+      "column"
     ]
   },
   {
@@ -73,6 +137,12 @@
         ]
       }
     }
+  },
+  {
+    "id": "tabs-markets",
+    "components": [
+      "tabs-markets-item"
+    ]
   },
   {
     "id": "tabs",

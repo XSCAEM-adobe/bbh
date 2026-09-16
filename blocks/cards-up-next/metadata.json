@@ -1,0 +1,16 @@
+{
+  "variantName": "cards-up-next",
+  "baseBlock": "cards",
+  "visualCharacteristics": "Single wide horizontal recirculation card: thumbnail image on one side, body (eyebrow, article heading, description, 'Read It' CTA) on the other.",
+  "contentPattern": "One card row: image cell + text cell (eyebrow + heading + description + CTA link).",
+  "usage": "'Up Next' article recirculation at the end of insights pages.",
+  "canonicalModel": "container",
+  "options": [],
+  "memberVariantIds": [
+    "cards-up-next"
+  ],
+  "pagesUsing": [
+    "/us/en/insights/investor-services-insights/when-ai-makes-experts-better-clients-win"
+  ],
+  "reuseCount": 1
+}

@@ -1,0 +1,155 @@
+/* hero-article — article header split layout.
+   LEFT: full-bleed photographic image. RIGHT: solid brand-red content panel
+   (eyebrow, title, date, author avatar + name, summary) in white text.
+   Values extracted from bbh.com computed styles. Mobile-first. */
+
+/* Full-bleed: escape the section container's max-width + padding. */
+.hero-article-container {
+  margin: 0;
+}
+
+.hero-article-container .hero-article-wrapper {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-article {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-article > div {
+  margin: 0;
+}
+
+/* --- Media panel (photographic image) --- */
+.hero-article .hero-article-media,
+.hero-article .hero-article-media > div,
+.hero-article .hero-article-media p {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+/* Curved top-left corner where the white page sweeps into the image
+   (matches source .cmp-teaser__image border-top-left-radius). */
+.hero-article .hero-article-media {
+  overflow: hidden;
+  border-top-left-radius: 96px;
+}
+
+.hero-article .hero-article-media picture,
+.hero-article .hero-article-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Content panel (brand-red) --- */
+.hero-article .hero-article-content {
+  background-color: var(--brand-red);
+  color: #fff;
+  padding: 40px 24px;
+}
+
+.hero-article .hero-article-content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Reset default block spacing on all panel children; flex gap handles rhythm. */
+.hero-article .hero-article-content > div > * {
+  margin: 0;
+}
+
+/* Title */
+.hero-article .hero-article-content h1 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-size-xl); /* 50px */
+  font-weight: 300;
+  line-height: 1.24; /* ~62px at 50px */
+  letter-spacing: -0.32px;
+  color: #fff;
+}
+
+/* Line-of-business eyebrow */
+.hero-article .hero-article-content .hero-article-eyebrow {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+  letter-spacing: -0.32px;
+  color: #fff;
+}
+
+/* Publish date */
+.hero-article .hero-article-content .hero-article-date {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: -0.32px;
+  color: #fff;
+}
+
+/* Summary */
+.hero-article .hero-article-content .hero-article-summary {
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: -0.32px;
+  color: #fff;
+}
+
+/* --- Author: round avatar + linked name --- */
+.hero-article .hero-article-author {
+  margin: 0;
+}
+
+.hero-article .hero-article-author a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.32px;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.hero-article .hero-article-author picture,
+.hero-article .hero-article-author img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- Desktop: side-by-side split --- */
+@media (width >= 900px) {
+  .hero-article {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .hero-article .hero-article-media {
+    flex: 0 0 37%;
+  }
+
+  .hero-article .hero-article-content {
+    flex: 1 1 63%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 54px 81px;
+  }
+}
