@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://www.bbh.com/us/en/insights/investor-services-insights/when-ai-makes-experts-better-clients-win.html",
+  "path": "us/en/insights/investor-services-insights/when-ai-makes-experts-better-clients-win",
+  "timestamp": "2026-09-16T04:15:00.716Z",
+  "title": "When AI makes experts better, clients win",
+  "template": "investor-services-insights-2",
+  "blocks": [
+    "hero-article",
+    "sharing-article",
+    "cards-up-next"
+  ]
+}

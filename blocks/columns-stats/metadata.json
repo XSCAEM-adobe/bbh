@@ -1,0 +1,13 @@
+{
+  "variantName": "columns-stats",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "A row of four statistics separated by vertical rules. Each item is a large number with a smaller label beneath. Light background, text-only, no images.",
+  "contentPattern": "Four columns (one row); each cell contains a large number line followed by a label line.",
+  "options": [],
+  "memberVariantIds": ["columns-stats"],
+  "usage": {
+    "reuseCount": 1,
+    "pages": ["/us/en"]
+  }
+}

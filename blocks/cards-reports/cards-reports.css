@@ -1,0 +1,74 @@
+/* cards-reports — Stakeholder Reports
+ * Values extracted from bbh.com computed styles (see migration-work/cards-reports-extracted.css)
+ * 3 equal columns on desktop, single-column stack on mobile.
+ */
+
+.cards-reports > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.cards-reports > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+/* image cell */
+.cards-reports .cards-reports-card-image {
+  line-height: 0;
+}
+
+.cards-reports .cards-reports-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-reports .cards-reports-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 373 / 283;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* title cell */
+.cards-reports .cards-reports-card-body {
+  margin-top: 35px;
+}
+
+.cards-reports .cards-reports-card-body h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 34px;
+  letter-spacing: -0.32px;
+  text-align: left;
+}
+
+.cards-reports .cards-reports-card-body h2 a:any-link {
+  color: var(--brand-red);
+  text-decoration: none;
+}
+
+/* trailing red arrow after the title link */
+.cards-reports .cards-reports-card-body h2 a::after {
+  content: " \203A";
+  font-weight: 300;
+}
+
+.cards-reports .cards-reports-card-body h2 a:hover {
+  color: var(--brand-red);
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .cards-reports > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

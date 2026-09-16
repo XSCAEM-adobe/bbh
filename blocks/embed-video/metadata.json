@@ -1,0 +1,10 @@
+{
+  "variantName": "embed-video",
+  "baseBlock": "embed",
+  "visualCharacteristics": "Responsive 16:9 video embed (Brightcove/YouTube/Vimeo) that lazy-loads, optionally behind a poster image with a play button.",
+  "contentPattern": "A single link to the video URL, with an optional placeholder image.",
+  "usage": "Inline video within articles (e.g. a market analyst's video commentary).",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["embed-video"]
+}

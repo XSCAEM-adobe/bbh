@@ -1,0 +1,56 @@
+{
+  "definitions": [
+    {
+      "title": "Tabs Markets",
+      "id": "tabs-markets",
+      "model": "tabs-markets",
+      "filter": "tabs-markets",
+      "plugins": {
+        "da": {
+          "columns": 1,
+          "rows": 2
+        }
+      }
+    },
+    {
+      "title": "Tabs Markets Item",
+      "id": "tabs-markets-item",
+      "model": "tabs-markets-item",
+      "plugins": {
+        "da": {
+          "columns": 0,
+          "rows": 2,
+          "fields": [
+            { "name": "name", "selector": "div:nth-child(1)" },
+            { "name": "content", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "tabs-markets-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "name",
+          "valueType": "string",
+          "label": "Tab Name"
+        },
+        {
+          "component": "richtext",
+          "name": "content",
+          "label": "Content",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "tabs-markets",
+      "components": ["tabs-markets-item"]
+    }
+  ]
+}

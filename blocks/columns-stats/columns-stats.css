@@ -1,0 +1,61 @@
+/* columns-stats — "BBH by the numbers" — CSS from bbh.com source computed styles */
+
+.columns-stats {
+  padding: 0 12px 32px;
+  color: #273846;
+}
+
+/* Row: mobile-first vertical stack */
+.columns-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Each stat column */
+.columns-stats .columns-stats-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  text-align: center;
+}
+
+/* Large stat number (H2) */
+.columns-stats .columns-stats-item h2 {
+  margin: 0 0 16px;
+  font-family: var(--heading-font-family);
+  font-size: 70px;
+  font-weight: 300;
+  line-height: 58px;
+  letter-spacing: normal;
+  color: #273846;
+}
+
+/* Stat label */
+.columns-stats .columns-stats-item p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: normal;
+  color: #767676;
+}
+
+/* Desktop: four equal columns in a row with dividers */
+@media (width >= 900px) {
+  .columns-stats > div {
+    flex-direction: row;
+    gap: 0;
+    margin-top: 35px;
+  }
+
+  .columns-stats .columns-stats-item {
+    flex: 1 1 0;
+    border-right: 3px solid #efefef;
+  }
+
+  .columns-stats .columns-stats-item:last-child {
+    border-right: none;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variantName": "carousel-insights",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "A horizontal carousel of insight cards on a light background. Each card shows a category tag, an image, a red linked title, and a 'Read now' link. Prev/next arrows flank the track and pagination dots sit below.",
+  "contentPattern": "Repeatable slide items; each slide has an image cell and a body cell (category tag + linked title + read-now link).",
+  "options": [],
+  "memberVariantIds": ["carousel-insights"],
+  "usage": {
+    "reuseCount": 1,
+    "pages": ["/us/en"]
+  }
+}

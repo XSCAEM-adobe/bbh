@@ -1,9 +1,11 @@
 {
+  "type": "xwalk",
   "sites": {
     "bbh": {
       "previewOrg": "XSCAEM-adobe",
       "previewSite": "bbh",
-      "contentHostUrl": "https://content.da.live/XSCAEM-adobe/bbh/"
+      "contentHostUrl": "https://content.da.live/XSCAEM-adobe/bbh/",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
     }
   }
 }

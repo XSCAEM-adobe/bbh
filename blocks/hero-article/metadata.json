@@ -1,0 +1,16 @@
+{
+  "variantName": "hero-article",
+  "baseBlock": "hero",
+  "visualCharacteristics": "Split article header: full-bleed photographic image on one side, a solid content panel on the other holding a line-of-business eyebrow, article title (h1), publish date, author portrait + name, and a summary paragraph.",
+  "contentPattern": "Row 1: image. Following rows: eyebrow + title + date + author + summary (rich text).",
+  "usage": "Header for insights/article pages that pair a hero image with article metadata.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": [
+    "hero-article"
+  ],
+  "pagesUsing": [
+    "/us/en/insights/investor-services-insights/when-ai-makes-experts-better-clients-win"
+  ],
+  "reuseCount": 1
+}

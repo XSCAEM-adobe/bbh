@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-report-download",
+  "baseBlock": "columns",
+  "visualCharacteristics": "Two-column report feature: report cover image on one side; intro summary, a 'Table of Contents' heading + list, and Download (PDF) / Print CTAs on the other.",
+  "contentPattern": "One columns row, two cells: cell 1 = cover image; cell 2 = intro paragraphs + TOC heading + TOC list + Download/Print links.",
+  "usage": "Report/annual-report landing pages that pair a cover with a download and contents.",
+  "canonicalModel": "container",
+  "options": [],
+  "memberVariantIds": ["columns-report-download"]
+}

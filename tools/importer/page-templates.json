@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "our-story",
+      "urls": [
+        "https://www.bbh.com/us/en/bbh-who-we-are/our-story/2025-annual-report.html"
+      ],
+      "representativeUrl": "https://www.bbh.com/us/en/bbh-who-we-are/our-story/2025-annual-report.html",
+      "description": "BBH 2025 Annual Report landing page: red title band + report download feature (cover image, intro, table of contents, Download/Print CTAs)",
+      "blocks": [
+        {
+          "name": "columns-report-download",
+          "instances": [
+            ".cmp-print"
+          ]
+        }
+      ],
+      "urlPattern": "/us/en/bbh-who-we-are/our-story/*",
+      "sections": [
+        {
+          "id": "page-title",
+          "name": "page-title",
+          "selector": [
+            ".cmp-teaser--red-ribbon-only-text"
+          ],
+          "style": "deep-red",
+          "blocks": [],
+          "defaultContent": [
+            ".cmp-teaser--red-ribbon-only-text"
+          ]
+        },
+        {
+          "id": "report-download",
+          "name": "report-download",
+          "selector": [
+            ".cmp-print"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-report-download"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "urls": [
+        "https://www.bbh.com/us/en.html"
+      ],
+      "representativeUrl": "https://www.bbh.com/us/en.html",
+      "description": "BBH US home page: hero with two promo panels, red what-we-do statement, featured insights carousel, stats, and stakeholder report cards",
+      "urlPattern": "/us/*",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [
+            ".cmp-teaser--hero-page-v2"
+          ]
+        },
+        {
+          "name": "columns-business-lines",
+          "instances": [
+            ".cmp-teaser--hero-page-v2 .cmp-list__list-container"
+          ]
+        },
+        {
+          "name": "columns-statement",
+          "instances": [
+            ".cmp-teaser--card-v2.bbh-container-background__red"
+          ]
+        },
+        {
+          "name": "carousel-insights",
+          "instances": [
+            ".cmp-teaser--card-v3 .cmp-list__list-container"
+          ]
+        },
+        {
+          "name": "columns-stats",
+          "instances": [
+            ".cmp-list--teaser--stat.cmp-list--four-column"
+          ]
+        },
+        {
+          "name": "cards-reports",
+          "instances": [
+            ".cmp-teaser--card.top.list.aem-GridColumn--default--12:not(.cmp-teaser--card-v2):not(.cmp-teaser--card-v3):not(.cmp-list--teaser--stat)"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "hero",
+          "selector": [
+            ".cmp-teaser--hero-page-v2"
+          ],
+          "style": "dark",
+          "blocks": [
+            "hero-banner",
+            "columns-business-lines"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "what-we-do",
+          "name": "what-we-do",
+          "selector": [
+            ".cmp-teaser--card-v2.bbh-container-background__red"
+          ],
+          "style": "deep-red",
+          "blocks": [
+            "columns-statement"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "featured-insights",
+          "name": "featured-insights",
+          "selector": [
+            ".cmp-teaser--card-v3"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-insights"
+          ],
+          "defaultContent": [
+            ".cmp-teaser--card-v3 .cmp-list__description",
+            ".cmp-teaser--card-v3 .cmp-list__CTA"
+          ]
+        },
+        {
+          "id": "bbh-by-the-numbers",
+          "name": "bbh-by-the-numbers",
+          "selector": [
+            ".cmp-list--teaser--stat.cmp-list--four-column"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-stats"
+          ],
+          "defaultContent": [
+            ".cmp-list--teaser--stat .cmp-list__description"
+          ]
+        },
+        {
+          "id": "stakeholder-reports",
+          "name": "stakeholder-reports",
+          "selector": [
+            ".cmp-teaser--card.top.list.aem-GridColumn--default--12:not(.cmp-teaser--card-v2):not(.cmp-teaser--card-v3):not(.cmp-list--teaser--stat)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-reports"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "investor-services-insights",
+      "urls": [
+        "https://www.bbh.com/us/en/insights/investor-services-insights/destination-distribution-navigating-the-worlds-fund-distribution-markets.html"
+      ],
+      "representativeUrl": "https://www.bbh.com/us/en/insights/investor-services-insights/destination-distribution-navigating-the-worlds-fund-distribution-markets.html",
+      "description": "BBH insights article: split article hero with metadata, social share row, market tabs with video + copy, Up Next recirculation card, legal disclaimer",
+      "blocks": [
+        {
+          "name": "hero-article",
+          "instances": [
+            ".cmp-teaser--up-next-v2"
+          ]
+        },
+        {
+          "name": "sharing-article",
+          "instances": [
+            ".cmp-sharing-left"
+          ]
+        },
+        {
+          "name": "tabs-markets",
+          "instances": [
+            ".cmp-tabs--horizontal"
+          ]
+        },
+        {
+          "name": "cards-up-next",
+          "instances": [
+            ".cmp-teaser--smaller-crop-v2"
+          ]
+        }
+      ],
+      "urlPattern": "/us/en/insights/investor-services-insights/*",
+      "sections": [
+        {
+          "id": "article-hero",
+          "name": "article-hero",
+          "selector": [
+            ".cmp-teaser--up-next-v2"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "social-share",
+          "name": "social-share",
+          "selector": [
+            ".cmp-sharing-left"
+          ],
+          "style": null,
+          "blocks": [
+            "sharing-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "market-tabs",
+          "name": "market-tabs",
+          "selector": [
+            ".cmp-tabs--horizontal"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-markets"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "up-next",
+          "name": "up-next",
+          "selector": [
+            ".cmp-teaser--smaller-crop-v2"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-up-next"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "disclaimer",
+          "name": "disclaimer",
+          "selector": [
+            ".bbh-text--disclaimer"
+          ],
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            ".bbh-text--disclaimer"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "investor-services-insights-2",
+      "urls": [
+        "https://www.bbh.com/us/en/insights/investor-services-insights/when-ai-makes-experts-better-clients-win.html"
+      ],
+      "representativeUrl": "https://www.bbh.com/us/en/insights/investor-services-insights/when-ai-makes-experts-better-clients-win.html",
+      "description": "BBH insights article (long-form body): split article hero, social share row, article body (default content with pull quotes/highlights/inline chart), Up Next recirculation card, legal disclaimer",
+      "blocks": [
+        {
+          "name": "hero-article",
+          "instances": [
+            ".cmp-teaser--up-next-v2"
+          ]
+        },
+        {
+          "name": "sharing-article",
+          "instances": [
+            ".cmp-sharing-left"
+          ]
+        },
+        {
+          "name": "cards-up-next",
+          "instances": [
+            ".cmp-teaser--smaller-crop-v2"
+          ]
+        }
+      ],
+      "urlPattern": "/us/en/insights/investor-services-insights/*",
+      "sections": [
+        {
+          "id": "article-hero",
+          "name": "article-hero",
+          "selector": [
+            ".cmp-teaser--up-next-v2"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "social-share",
+          "name": "social-share",
+          "selector": [
+            ".cmp-sharing-left"
+          ],
+          "style": null,
+          "blocks": [
+            "sharing-article"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "article-body",
+          "name": "article-body",
+          "selector": [
+            ".cmp-container--one-column-text"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".cmp-container--one-column-text"
+          ]
+        },
+        {
+          "id": "up-next",
+          "name": "up-next",
+          "selector": [
+            ".cmp-teaser--smaller-crop-v2"
+          ],
+          "style": "grey",
+          "blocks": [
+            "cards-up-next"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "disclaimer",
+          "name": "disclaimer",
+          "selector": [
+            ".bbh-text--disclaimer"
+          ],
+          "style": "grey",
+          "blocks": [],
+          "defaultContent": [
+            ".bbh-text--disclaimer"
+          ]
+        }
+      ]
+    }
+  ]
+}
